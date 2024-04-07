@@ -15,9 +15,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+//Se cambia el Nombre en pattern para que ejecute la orden del controlador
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
 
 app.Run();
