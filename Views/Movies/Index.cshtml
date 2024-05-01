@@ -28,31 +28,6 @@
         </tr>
     </thead>
     <tbody>
-<<<<<<< HEAD
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-=======
         @foreach (var item in Model)
         {
             <tr>
@@ -77,5 +52,3 @@
         }
     </tbody>
 </table>
-
->>>>>>> 395e8c2027df72720a68a9ad24c6c61e8f92a77b
