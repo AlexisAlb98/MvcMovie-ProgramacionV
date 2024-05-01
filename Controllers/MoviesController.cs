@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+>>>>>>> 395e8c2027df72720a68a9ad24c6c61e8f92a77b
 using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
     public class MoviesController : Controller
     {
+<<<<<<< HEAD
         private readonly MoviesContext _context;
 
         public MoviesController(MoviesContext context)
@@ -31,10 +36,16 @@ namespace MvcMovie.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Movies == null)
+=======
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+>>>>>>> 395e8c2027df72720a68a9ad24c6c61e8f92a77b
             {
                 return NotFound();
             }
 
+<<<<<<< HEAD
             var movie = await _context.Movies
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
@@ -159,5 +170,49 @@ namespace MvcMovie.Controllers
         {
             return (_context.Movies?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+=======
+            //Simulación de creación de un objeto (model)
+            //Mas adelante vamos a ver como usar una base de datos
+            var movie = new Movie
+            {
+                Genre = "Terror",
+                Id = 1,
+                Price = 1,
+                ReleaseDate = DateTime.Now,
+                Title = "La noche del terror"
+            };
+
+
+            return View(movie);
+        }
+        public async Task<IActionResult> Index()
+        {
+            var listMovies = new List<Movie>();
+
+            var movie1 = new Movie
+            {
+                Genre = "Terror",
+                Id = 1,
+                Price = 1,
+                ReleaseDate = DateTime.Now,
+                Title = "La noche del terror"
+            };
+            listMovies.Add(movie1);
+
+            var movie2 = new Movie
+            {
+                Genre = "Terror",
+                Id = 1,
+                Price = 1,
+                ReleaseDate = DateTime.Now,
+                Title = "La noche del terror II"
+            };
+            listMovies.Add(movie2);
+
+            return View(listMovies);
+
+        }
+
+>>>>>>> 395e8c2027df72720a68a9ad24c6c61e8f92a77b
     }
 }
