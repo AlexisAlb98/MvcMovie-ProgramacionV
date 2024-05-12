@@ -18,8 +18,11 @@ namespace MvcMovie.Models
         [Display(Name = "Genero")]
         public string? Genre { get; set; }
 
-        [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El campo Precio debe ser un número válido.")]
         [Display(Name = "Precio")]
         public decimal? Price { get; set; }
+
+        [Display(Name = "Cartelera")]
+        public string? Image { get; set; }
+
     }
 }
