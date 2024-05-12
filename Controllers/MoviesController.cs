@@ -19,14 +19,21 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
-        // GET: Movies
-        public async Task<IActionResult> Index()
+        // GET: 
+        public async Task<IActionResult> Index(string buscar)
         {
-            return _context.Movies != null ?
-                        View(await _context.Movies.ToListAsync()) :
-                        Problem("Entity set 'MoviesContext.Movies'  is null.");
-        }
+            // Obtener todas las películas por defecto
+            IQueryable<Movie> peliculas = _context.Movies;
 
+            // Filtrar si se proporciona un término de búsqueda
+            if (!String.IsNullOrEmpty(buscar))
+            {
+                peliculas = peliculas.Where(m => m.Title.Contains(buscar));
+            }
+
+            // Convertir los resultados en una lista y devolver la vista
+            return View(await peliculas.ToListAsync());
+        }
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
