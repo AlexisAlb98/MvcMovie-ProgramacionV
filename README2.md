@@ -10,4 +10,4 @@ Cadena de conexion "Server=DESKTOP-FGAVFI9; DataBase=Movies; Trusted_Connection=
   "ConnectionStrings": {
     "cadenaSQL": "Server=DESKTOP-FGAVFI9; DataBase=Movies; Trusted_Connection=True; TrustServerCertificate=True;"
   
-}}
+}}}

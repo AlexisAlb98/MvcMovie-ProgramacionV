@@ -26,7 +26,7 @@ public partial class MoviesContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Movies__3214EC07659BF9C6");
 
-            entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
             entity.Property(e => e.ReleaseDate).HasColumnType("date");
         });
 

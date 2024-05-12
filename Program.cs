@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
-
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,12 @@ builder.Services.AddDbContext<MoviesContext>(options =>
 });
 
 var app = builder.Build();
+
+//Configuracion para idioma español
+
+//var cultureInfo = new CultureInfo("es-ES");
+//.DefaultThreadCurrentCulture = cultureInfo;
+//CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
